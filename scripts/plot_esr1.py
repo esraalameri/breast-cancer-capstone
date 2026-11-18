@@ -40,3 +40,11 @@ plt.savefig(
 plt.show()
 
 print("ESR1 boxplot saved successfully!")
+
+print("\nMedian ESR1 expression by subtype:")
+
+print(
+    df.groupby("PAM50Call_RNAseq")["ESR1"]
+    .median()
+    .sort_values(ascending=False)
+)
